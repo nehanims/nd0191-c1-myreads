@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+
 import { Link } from "react-router-dom";
 
 import BookShelf from "./BookShelf";
@@ -13,8 +13,10 @@ const BookShelves = ({ booksOnShelf, booksById, bookToShelfMapper }) => {
     const changeShelf = (book, newShelf) => {
         const updateBooks = async () => {
             const updatedShelf = await update(book, newShelf);
-            const books = await getAll();
-            bookToShelfMapper(books);
+            if(!updatedShelf.error){
+                const books = await getAll();
+                bookToShelfMapper(books);
+            }
         }
         updateBooks();
     };

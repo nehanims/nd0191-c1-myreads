@@ -14,7 +14,7 @@ const SearchPage = ({ booksById, bookToShelfMapper }) => {
             setSearchResults(books);
         }
         else (setSearchResults([]));
-    }
+    };
     //TODO ask someone why "Linux Command" query returns no results from the API
     const changeShelf = (book, newShelf) => {
         const updateBooks = async () => {
@@ -47,7 +47,7 @@ const SearchPage = ({ booksById, bookToShelfMapper }) => {
         query && getSearchResults();
         (!query) && setSearchResults([]);
         return () => { mounted = false; };
-    }, [query])
+    }, [query]);
 
     const onQueryChange = (e) => {
         setQuery(e.target.value);
