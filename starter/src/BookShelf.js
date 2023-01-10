@@ -1,6 +1,5 @@
 
 import React from "react";
-import Book from "./Book";
 import BooksGrid from "./BooksGrid";
 const BookShelf = ({ type, books, onShelfChange }) => {
     const getTitle = () => type === 'currentlyReading' ? 'Currently Reading' :

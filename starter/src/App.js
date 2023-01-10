@@ -14,7 +14,7 @@ function App() {
   const bookToShelfMapper = (books) => {
     const bookShelf = [];
     const booksByIdDict = [];
-    books.map(book => {
+    books.forEach(book => {
       if (!bookShelf[book.shelf])
         bookShelf[book.shelf] = [];
       bookShelf[book.shelf].push(book.id);

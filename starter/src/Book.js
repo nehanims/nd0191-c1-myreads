@@ -3,7 +3,7 @@ import BookShelfChanger from "./BookShelfChanger";
 
 const Book = ({ book, onShelfChange }) => {
     const title = book.title;
-    const author = book.authors && book.authors.join(', ') || "";
+    const author = book.authors ? book.authors.join(', ') : "";
     const url = book.imageLinks !== undefined && book.imageLinks.thumbnail !== undefined ? book.imageLinks.thumbnail : "";
 
     const changeShelf = e => onShelfChange(book, e.target.value);
